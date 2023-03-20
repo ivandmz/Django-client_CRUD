@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}home{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <table class="table table-dark">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Apellido</th>
+                    <th>Nombre</th>
+                    <th>DNI</th>
+                    <th>email</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Servicio</th>
+                    <th>Fecha alta</th>
+                    <th>% Desc.</th>
+                    <th>Fecha inicio promo</th>
+                    <th>Fecha fin promo</th>
+                </tr>
+            </thead>
+            <tbody class="table-dark">
+                {% for cliente in object_list|dictsort:"last_name" %}
+                <tr>
+                    <td>{{cliente.last_name}}</td>
+                    <td>{{cliente.name}}</td>
+                    <td>{{cliente.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+        {% endfor %}
+    </div>
+{% endblock %}
